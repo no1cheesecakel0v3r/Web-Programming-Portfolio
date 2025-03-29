@@ -1,0 +1,310 @@
+/* Import fonts used for the site */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway:wght@400;500;600;700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global styles */
+html, body {
+    height: 100%; /* Ensure full height for fixed background */
+    overflow-y: scroll; /* Enable vertical scrolling */
+}
+
+body {
+    font-family: sans-serif;
+    color: #fff;
+    min-height: 100vh; /* Ensures body takes at least full viewport height */
+    background: linear-gradient(135deg, 
+        rgba(41, 121, 255, 0.4) 0%,
+        rgba(123, 31, 235, 0.4) 50%,
+        rgba(255, 41, 181, 0.4) 100%
+    ), black;
+    background-attachment: fixed; /* Fix the background */
+    background-size: cover; /* Ensure background covers the viewport */
+}
+
+/* Button Styles */
+.button {
+    display: inline-block;
+    padding: 12px 24px; /* Increased padding for a better look */
+    color: #fff;
+    background: linear-gradient(135deg, 
+        rgba(41, 121, 255, 0.8) 0%, 
+        rgba(123, 31, 235, 0.8) 50%, 
+        rgba(255, 41, 181, 0.8) 100%
+    ); /* Gradient background colours that are inspired by the colour palette of the game FFXV */
+    background-size: 250% 250%; /* Allows the gradient to move */
+    border: 2px solid transparent; /* Transparent border */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none;
+    font-size: 18px; /* Larger font size */
+    font-family: 'Cinzel', serif; /* Use Cinzel font */
+    transition: transform 0.2s; /* Smooth transition */
+}
+
+.button:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    animation: gradientAnimationHover 3s ease infinite; /* Change animation on hover */
+}
+
+/* Keyframes for gradient movement */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Keyframes for hover gradient movement */
+@keyframes gradientAnimationHover {
+    0% {
+        background-position: 100% 50%;
+    }
+    50% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.button:active {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Shadow effect on click */
+}
+
+/* Remove animation when not hovered */
+.button:not(:hover) {
+    animation: none; /* No animation when not hovered */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cinzel', serif;
+}
+
+/* Navigation tab.*/
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 50;
+}
+
+.nav-content {
+    display: flex;
+    height: 64px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: 'Cinzel', serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-links a {
+    font-family: 'Cinzel', serif;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    transition: color 0.3s;
+}
+
+/* Small animation when hovering over the navigation buttons */
+.nav-links a:hover {
+    color: white;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s;
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Main Content */
+main {
+    padding-top: 64px;
+}
+
+section {
+    padding: 50px 0;
+}
+
+.content-section {
+    background: rgba(65,21,40,0.5); 
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Space around the text */
+    max-width: 1000px; /* Optional: set a maximum width */
+    margin: 20px auto; /* Center the box */
+    box-shadow: 0px 0px 10px rgba(248,185,54,0.8); /* Optional: add shadow for depth */
+}
+
+.content-section p {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    margin: 15px; /* Corrected to specify units */
+    font-weight: 300; /* Make text lighter */
+}
+
+/* Home Section */
+.hero {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 64px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 0.05em;
+    max-width: 800px;
+    font-size: 20px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 35px;
+}
+
+/* Content Sections */
+.section-title {
+    font-size: 45px;
+    margin-bottom: 15px;
+    margin-left: 5px;
+    text-align: left;
+}
+
+.section-content {
+    max-width: 800px;
+    margin: 0 auto; /* Center the content container */
+    text-align: left; /* Align text to the left */
+    letter-spacing: 0.05em;
+    padding-left: 20px; /* Add padding to the left */
+    padding-right: 20px; /* Optional: Add padding to the right for balance */
+}
+
+.section-content p {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 15px;
+}
+
+/* Style the unordered list to match the overall theme */
+ul {
+    padding-left: 20px; /* Add some padding for better alignment */
+    margin: 15px; /* Match the margin with regular paragraphs */
+}
+
+/* Style list items */
+ul li {
+    font-family: 'Playfair Display', serif; /* Use the same font as other text */
+    font-size: 18px; /* Match the font size */
+    color: rgba(255, 255, 255, 0.9); /* Maintain a similar color to the content */
+    margin-bottom: 10px; /* Add space between list items */
+}
+
+/* Optionally, you can style the strong elements within lists to ensure they follow the same style */
+ul li strong {
+    font-weight: bold; /* Ensure strong text is bold */
+}
+
+/* Characters*/
+.character-card {
+    background: linear-gradient(135deg,
+  rgba(41, 121, 255, 0.4) 0%,
+  rgba(123, 31, 235, 0.4) 50%,
+  rgba(255, 41, 181, 0.4) 100%),
+black;/* White background with 50% transparency */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Space around the text */
+    max-width: 1000px; /* Optional: set a maximum width */
+    margin: 20px auto; /* Center the box */
+    box-shadow: 0px 0px 10px rgba(255, 199, 78, 0.3); /* Optional: add shadow for depth */
+}
+
+.character-card p {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    margin: 15px; /* Corrected to specify units */
+    font-weight: 300; /* Make text lighter */
+}
+
+.character-name {
+    font-size: 30px;
+    margin-left: 10px;
+    margin-bottom: 2px; /* Adjusted */
+    padding: 5px;
+}
+
+.character-role {
+    font-family: 'Raleway', serif;
+    font-size: 17px;
+    font-weight: bold;
+    margin-left: 15px;
+    margin-top: 0; /* Adjusted */
+}
+
+/* Footer */
+footer {
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    padding: 32px 0;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+footer p {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+}
