@@ -1,0 +1,43 @@
+/* Style for the body */
+body {
+  display: flex;               
+  justify-content: center;     
+  align-items: center;         
+  height: 100vh;              
+  margin: 0;                  
+  background-color: #000;     /* Set the body background to black */
+}
+
+/* Design for the text under the title */
+p {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 2px;
+  color: white;
+}
+
+/* Style for the video container */
+.video-container {
+  max-width: 800px;           /* Adjust the max width as you like */
+  width: 100%;                /* Make it responsive */
+  padding: 20px;              /* Add padding around the video */
+  border: 2px solid #555;     /* Dark grey border for the box */
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.5); /* White shadow */
+  background-color: #000;     /* Black background for the box */
+  border-radius: 8px;         /* Optional rounded corners */
+}
+
+/* Style for the video element */
+video {
+  width: 100%;                /* Make the video width responsive */
+  height: auto;               /* Maintain aspect ratio */
+}
+
+/* Style for the video title */
+.video-title {
+  text-align: center;         /* Center the title */
+  margin-bottom: 10px;       /* Space between title and video */
+  margin-top: 2px;
+  font-size: 45px;           /* Adjust font size */
+  color: white;               /* White font color */
+}
